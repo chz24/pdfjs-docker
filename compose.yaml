@@ -1,0 +1,8 @@
+services:
+  viewer:
+    build: .
+    ports:
+      - "8080:80"
+    environment:
+      PDFJS_ALLOWED_ORIGINS: ${PDFJS_ALLOWED_ORIGINS:-}
+    restart: unless-stopped
